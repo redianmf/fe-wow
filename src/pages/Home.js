@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../index.css';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,6 +15,11 @@ import ModalBeforeSubscribe from '../components/modals/ModalBeforeSubscribe';
 
 
 function Home() {
+
+// useEffect(() => {
+//     console.log(loginState);
+//     });
+
     return (
         <div className="body-afterLogin ps-5 pe-5">
         <Container fluid>

@@ -15,7 +15,7 @@ export default function BookList() {
                 <div><Link to={`/book-details/${data.id}`}><img className="book-cover cursor-link" src={process.env.PUBLIC_URL + data.image} alt="" /></Link></div>
                 {/* <div><img onClick={redirect} className="book-cover cursor-link" src={process.env.PUBLIC_URL + data.image} alt="" /></div> */}
                 <div className="book-title mt-3 mb-3">{data.title}</div>
-                <div className="book-author">{data.author}</div>
+                <div className="book-author mb-5">{data.author}</div>
             </Col>
         ))}
       </Row>

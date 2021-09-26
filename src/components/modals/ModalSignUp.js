@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../../index.css';
 import { Modal, Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useHistory } from 'react-router-dom';
 
 function ModalSignUp(props) {
     // Switch Modal
@@ -19,24 +20,29 @@ function ModalSignUp(props) {
         fullname: '',
         });
     
-        const handleOnChange = (e) => {
-        setSignupState({
-            ...signupState,
-            [e.target.name]: e.target.value,
-        });
-        };
+    const handleOnChange = (e) => {
+    setSignupState({
+        ...signupState,
+        [e.target.name]: e.target.value,
+    });
+    };
     
-        // Action on submit form
-        const handleOnSubmit = (e) => {
-        e.preventDefault();
-        //print state value with console.log here
-        console.log(signupState);
-        };
+    // Action on submit form
+    let history = useHistory();
+    const handleOnSubmit = (e) => {
+    e.preventDefault();
+    console.log(signupState);
+    if(!signupState.email || !signupState.password || !signupState.fullname) {
+        alert("Please insert all fields")
+        } else {
+            history.push("/")
+        }
+    };
 
     return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
       <Modal.Body className="show-grid">
-      <Form onSubmit={handleOnSubmit}>
+      <Form>
         <Form.Group className="modal-title">
         Sign Up
         </Form.Group>
@@ -71,7 +77,7 @@ function ModalSignUp(props) {
                 placeholder="Full Name" />
         </Form.Group>
 
-        <Button className="btn-modal" type="submit">
+        <Button className="btn-modal" type="submit" onClick={handleOnSubmit}>
             Sign Up
         </Button>
         <Form.Group className="text-center mb-3">

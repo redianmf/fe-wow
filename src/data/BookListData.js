@@ -23,6 +23,24 @@ const bookData = [
         author: 'Rachel Hartman',
         image: '/book-img/book4.png',
     },
+    {
+        id: 5,
+        title: 'Divergent',
+        author: 'Veronica Roth',
+        image: '/book-img/book5.jpg',
+    },
+    {
+        id: 6,
+        title: 'Insurgent',
+        author: 'Veronica Roth',
+        image: '/book-img/book6.jpg',
+    },
+    {
+        id: 7,
+        title: 'Allegiant',
+        author: 'Veronica Roth',
+        image: '/book-img/book7.jpg',
+    },
 ];
 
 export default bookData;
