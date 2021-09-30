@@ -20,6 +20,7 @@ import ProfileImgBig from '../assets/images/profile-big.png'
 // import components
 import MyBookList from '../components/MyBookList';
 import LeftPanel from '../components/LeftPanel';
+import Logout from '../components/Logout';
 
 
 function UserProfile() {
@@ -31,7 +32,7 @@ function UserProfile() {
                     <LeftPanel />
                     <div className="font-left-red mt-5 mb-5"><img className="me-3 align-top" src={UserIcon} alt="" />Profile</div>
                     <div className="mb-5"><Link to="/subscribe"><span className="font-left"><img className="me-2 align-top" src={SubscribeIcon} alt="" />Subscribe</span></Link></div><hr />
-                    <div className="mt-5"><Link to="/"><span className="font-left"><img className="me-3 align-top" src={LogoutIcon} alt="" />Logout</span></Link></div>
+                    <Logout />
                 </Col>
                 <Col sm={9} className="mt-5 mb-5">
                     <div className="profile-title">Profile</div>

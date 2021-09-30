@@ -16,6 +16,7 @@ import Attach from '../assets/icon/attach.png';
 
 // import components
 import LeftPanel from '../components/LeftPanel';
+import Logout from '../components/Logout';
 
 
 function Subscribe() {
@@ -40,14 +41,14 @@ function Subscribe() {
     };
 
     return (
-        <div className="body-afterLogin ps-5 pe-5 pb-1">
+        <div className="body-afterLogin ps-5 pe-5 pb-1 vh-100">
         <Container fluid>
             <Row>
                 <Col sm={3}>
                     <LeftPanel />
                     <div className="mt-5 mb-5"><Link to="/profile"><span className="font-left"><img className="me-3 align-top" src={UserIcon} alt="" />Profile</span></Link></div>
                     <div className="font-left-red mb-5"><img className="me-2 align-top" src={SubscribeIcon} alt="" />Subscribe</div><hr />
-                    <div className="mt-5 mb-5"><Link to="/"><span className="font-left"><img className="me-3 align-top" src={LogoutIcon} alt="" />Logout</span></Link></div>
+                    <Logout />
                 </Col>
                 <Col sm={9} className="mt-5 mb-4 text-center">
                     <div className="premium-text mb-4">Premium</div>

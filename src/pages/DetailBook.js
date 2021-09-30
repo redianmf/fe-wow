@@ -20,32 +20,16 @@ import GoTo from '../assets/icon/read.png'
 import LeftPanel from '../components/LeftPanel';
 import ModalBeforeSubscribe from '../components/modals/ModalBeforeSubscribe';
 import bookListData from '../data/BookListData';
+import Logout from '../components/Logout';
 
 
 function DetailBook() {
     const [modalShowUnsubscribe, setModalShowUnsubscribe] = useState(false);
     let {id} = useParams();
 
-    let book = bookListData[id-1];
-    // console.log(book);
-
-    let url = process.env.PUBLIC_URL + book.image;
-    console.log(url);
-
-    // const Books = () => {
-    //     const [book, setBook] = useState(null);
-    //     let redirect = useHistory();
-
-        
-    //     useEffect( () => {
-    //         fetch(redirect.push("/book-details/${id}"))
-    //             .then((response) => response.json())
-    //             .then((json) => setBook(json));
-    //         return () => {
-    //             setBook(null);
-    //       };
-    //     }, []);
-    // }
+    let book = bookListData.find(function (element) {
+        return element.id == id;
+    });
     
     return (
         <div className="body-afterLogin ps-5 pe-5">
@@ -55,7 +39,7 @@ function DetailBook() {
                     <LeftPanel />
                     <div className="mt-5 mb-5"><Link to="/profile"><span className="font-left"><img className="me-3 align-top" src={UserIcon} alt="" />Profile</span></Link></div>
                     <div className="mb-5"><Link to="/subscribe"><span className="font-left"><img className="me-2 align-top" src={SubscribeIcon} alt="" />Subscribe</span></Link></div><hr />
-                    <div className="mt-5"><Link to="/"><span className="font-left"><img className="me-3 align-top" src={LogoutIcon} alt="" />Logout</span></Link></div>
+                    <Logout />
                 </Col>
                 <Col sm={9} className="mt-5 mb-5">
                     <div className="d-flex">

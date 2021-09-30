@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import { Route, Redirect } from 'react-router-dom';
+import { UserContext } from '../context/userContext';
 
 // create component here
 export default function PrivateRoute({ component: Component, ...rest }) {
-  const isLogin = true;
+
+  const [state, dispatch] = useContext(UserContext);
+  const isLogin = state.isLogin;
+  // const isLogin = true;
+
   return (
     <>
       <Route

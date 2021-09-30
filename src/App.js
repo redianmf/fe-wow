@@ -1,6 +1,6 @@
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import LandingPage from './pages/LandingPage';
 import Home from './pages/Home';
@@ -12,9 +12,9 @@ import UserProfile from './pages/UserProfile';
 import AddBook from './pages/AddBook';
 import ListTrans from './pages/ListTrans';
 import PageNotFound from './pages/PageNotFound';
+import ModalSubscribeView from './pages/ModalSubscribeView';
 
 import PrivateRoute from './components/PrivateRoute';
-import ModalSubscribeView from './pages/ModalSubscribeView';
 
 function App() {
   return (
@@ -31,7 +31,8 @@ function App() {
         <PrivateRoute path="/book-details/:id" component={DetailBook} />
         <PrivateRoute path="/my-book-details" component={DetailBookAddedList} />
 
-        <Route exact path="*" component={PageNotFound} />
+        <Route exact path="/modals" component={ModalSubscribeView} />
+        <Route exact path="*" component={PageNotFound} />      
       </Switch>
     </Router>
 
